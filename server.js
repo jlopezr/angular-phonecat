@@ -1,6 +1,11 @@
 var express = require('express');
+var compress = require('compression');
+var morgan = require('morgan');
 var path = require('path');
 var app = express();
+
+app.use(morgan('dev'));
+app.use(compress());
 
 // Home returns the index
 app.get('/', function(req, res, next) {
